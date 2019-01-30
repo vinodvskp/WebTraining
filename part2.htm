@@ -1,43 +1,11 @@
 <html>
 <!--(Html tag is starting tag for all the web pages)-->
 
-
 <head>
     <!--(Inside head tag , we need to keep CSS style,Page title etc)-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script>
-
-        $(document).ready(function () {
-		    console.log("welcome");
-            <!-- alert("welcome"); -->
-			
-			$("#btnSave").click(function()
-			{
-			  console.log("Student Name is  : " +$("#txtName").val());
-			    console.log("Student Address  is: " +$("#txtAddress").val());
-			});
-			
-        });
-
-    </script>
-
-    <style>
-        <!--
-
-        ( inside style tag we need to add style to be applied to the page ) -->
-        h1{
-            color: blue;
-        }
-		
-		.main
-		{
-		font-size : 12px;
-		}
-    </style>
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/student.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/student.css"></link>
 </head>
 
 
@@ -46,20 +14,23 @@
     <!--(body tag is main tag which is visible in the browser after rendering the page)-->
     <h1>Student Registeration</h1>
 	 
+	 <form method="post" action="/student/registration">
 	 <table>
 	 <tr>
 	     <td>Name : </td>
-		 <td> <input type="text" id="txtName" /></td>
+		 <td> <input type="text" id="txtName" name="Name" /></td>
 	 </tr>
+	 
 	 <tr>
 	     <td>Address : </td>
-		 <td> <input type="text" id="txtAddress" /></td>
+		 <td> <input type="text" id="txtAddress" name="Address" /></td>
 	 </tr>
 	 
 	 </table>
 	 
-	 <input type="button" id="btnSave" value="Save"/>
-    
+	 
+	 <input type="submit" id="btnSave" value="Save"/>
+    </form>
 
 
 </body>
